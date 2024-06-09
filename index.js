@@ -22,7 +22,7 @@ bot.on(message('text'), (ctx)=>{
                         async function f1() {
                             let aw = await ytdl.getBasicInfo(url)
                             ctx.reply("درحال آپلود " + aw.videoDetails.title + "در تلگرام");  //send information message
-                            ctx.replyWithAudio(Input.fromReadableStream(ytdl(url, { filter: 'audioonly', quality: 'highestaudio' })), {caption: "@liveinmusic_ch", title: aw.videoDetails.title, performer: aw.videoDetails.author.name, duration: aw.videoDetails.lengthSeconds}) // get and send the music
+                            ctx.replyWithAudio(Input.fromReadableStream(ytdl(url, { filter: 'audioonly', quality: 'highestaudio' })), {title: aw.videoDetails.title, performer: aw.videoDetails.author.name, duration: aw.videoDetails.lengthSeconds}) // get and send the music
                           }
                           f1();
                     }
